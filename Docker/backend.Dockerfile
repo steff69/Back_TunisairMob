@@ -1,6 +1,11 @@
 # Use an official Node.js runtime as a parent image
 FROM node:14
 
+# Set environment variables
+ENV NODE_ENV=production
+ENV PORT=8083
+ENV buildTag=1.0
+
 # Set the working directory
 WORKDIR /usr/src/app
 
@@ -17,4 +22,4 @@ COPY backend/ .
 EXPOSE 8083
 
 # Start the app
-CMD [ "npm", "start" ]
+CMD ["npm", "start"]
